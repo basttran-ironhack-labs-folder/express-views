@@ -1,0 +1,17 @@
+<p>Here's a sample of our cool playlist:</p>
+<h2>{{featuredSong.title}}</h2>
+<p>by {{featuredSong.artist}}</p>
+{{!-- you can only check truthy/falsy directly inHBS if statements
+(===, <,>, etc.. are NOT allowed)--}}
+  {{#if featuredSong.comment}}
+  <h3>Curator's Comment</h3>
+  <p>{{featuredSong.comment}}</p>
+  {{else}}
+  <p>No comment yet.</p>
+  {{/if}}
+  <img src="{{featuredSong.photoUrl}}" />
+  <a href="/playlist">See the Full Playlist</a>
+
+  {{!-- HBS translates `-` in filenames get turned to `_` ,
+  "login-form.hbs" becomes "login_form"--}}
+  {{> login_form}}

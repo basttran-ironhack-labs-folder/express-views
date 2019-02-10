@@ -1,0 +1,14 @@
+<h2>Here is a sample of our cool playlist</h2>
+{{!-- no [] in HBS for accesing indexes --}}
+{{songList.0.title}}
+{{songList.4.title}}
+<ul>
+  {{!-- "songList" is the name of the ARRAY --}}
+  {{#each songList}}
+  <li>
+    <h3>{{this.title}} ({{this.title}})</h3>
+    <p> {{this.artist}}</p>
+    <img src="{{this.photoUrl}}">
+  </li>
+  {{/each}}
+</ul>
